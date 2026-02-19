@@ -1,0 +1,9 @@
+# Dataset configuration for Solar Panel Damage Detection
+train: c:\Users\Techie2\Downloads\Actividad_1\data\data\images\train
+val: c:\Users\Techie2\Downloads\Actividad_1\data\data\images\val
+
+# Number of classes
+nc: 3
+
+# Class names
+names: ['class0', 'class1', 'class2']
