@@ -1,0 +1,8 @@
+# Configuración personalizada para YOLOv5
+path: ../data  # Ruta base relativa a yolov5/train.py
+train: images/train
+val: images/val
+
+# Clases
+nc: 3
+names: ['clase_0', 'clase_1', 'clase_2']

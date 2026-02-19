@@ -1,0 +1,7 @@
+.venv/
+.venv-1/
+yolov5/
+runs/
+*.zip
+.DS_Store
+__pycache__/
