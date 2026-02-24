@@ -1,0 +1,44 @@
+# Hyperparameters optimized for small solar panel damage detection dataset
+# Classes: 0=Hotspots/Burned Cells, 1=Broken/Cracks, 2=Soiling
+# Tuned for: ~21 training images, 3 classes, small defects (Class 0)
+
+lr0: 0.001          # initial learning rate (reduced for stability on small dataset)
+lrf: 0.01           # final OneCycleLR learning rate (lr0 * lrf)
+momentum: 0.937     # SGD momentum / Adam beta1
+weight_decay: 0.0005  # optimizer weight decay
+warmup_epochs: 5.0  # warmup epochs (increased for small dataset stability)
+warmup_momentum: 0.8  # warmup initial momentum
+warmup_bias_lr: 0.1   # warmup initial bias lr
+
+# Loss weights
+box: 0.05           # box loss gain
+cls: 0.5            # cls loss gain
+cls_pw: 1.0         # cls BCELoss positive_weight
+obj: 1.0            # obj loss gain (scale with pixels)
+obj_pw: 1.0         # obj BCELoss positive_weight
+iou_t: 0.20         # IoU training threshold
+anchor_t: 4.0       # anchor-multiple threshold
+
+# Anchors
+anchors: 3          # anchors per output layer (0 to ignore)
+
+# Focal loss
+fl_gamma: 0.0       # focal loss gamma (efficientDet default gamma=1.5)
+
+# Augmentation (high augmentation for small dataset to prevent overfitting)
+hsv_h: 0.015        # image HSV-Hue augmentation (fraction)
+hsv_s: 0.7          # image HSV-Saturation augmentation (fraction)
+hsv_v: 0.4          # image HSV-Value augmentation (fraction)
+degrees: 15.0       # image rotation (+/- deg) — increased for solar panel variety
+translate: 0.1      # image translation (+/- fraction)
+scale: 0.5          # image scale (+/- gain)
+shear: 5.0          # image shear (+/- deg) — added for perspective variation
+perspective: 0.0001 # image perspective (+/- fraction), range 0-0.001
+flipud: 0.5         # image flip up-down (probability) — solar panels can be inverted
+fliplr: 0.5         # image flip left-right (probability)
+mosaic: 1.0         # image mosaic (probability) — key for small dataset variety
+mixup: 0.1          # image mixup (probability) — mild mixup to generalize
+copy_paste: 0.1     # segment copy-paste (probability)
+
+# Label smoothing — prevents overfitting on small dataset
+label_smoothing: 0.1  # label smoothing epsilon
