@@ -2,6 +2,7 @@
 .venv-1/
 yolov5/
 runs/
+datasets/
 *.zip
 .DS_Store
 __pycache__/
