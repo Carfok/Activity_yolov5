@@ -1,0 +1,35 @@
+# Dataset configuration for CCTV Pedestrian & Crosswalk Detection
+#
+# Classes:
+#   0 — person     (pedestrian, one box per person)
+#   1 — crosswalk  (pedestrian crossing, ONE single box per crossing area)
+#
+# Expected directory layout (relative to this file's parent or absolute):
+#
+#   datasets/
+#   └── cctv_crosswalk/
+#       ├── images/
+#       │   ├── train/   (≈70 % of images)
+#       │   ├── val/     (≈20 % of images)
+#       │   └── test/    (≈10 % of images)  ← optional
+#       └── labels/
+#           ├── train/
+#           ├── val/
+#           └── test/    ← optional
+#
+# Each label file is a plain-text .txt with one detection per line:
+#   <class_id> <x_center> <y_center> <width> <height>
+# All values are normalised to [0, 1] relative to image width/height.
+
+path: ../datasets/cctv_crosswalk   # dataset root (relative to yolov5/ clone, or use absolute path)
+train: images/train
+val:   images/val
+test:  images/test                  # optional — remove line if no test split exists
+
+# Number of classes
+nc: 2
+
+# Class names  (index → label)
+names:
+  - person      # 0 — pedestrian
+  - crosswalk   # 1 — pedestrian crossing (label as ONE bounding box per crossing)
