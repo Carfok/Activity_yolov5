@@ -21,7 +21,7 @@
 #   <class_id> <x_center> <y_center> <width> <height>
 # All values are normalised to [0, 1] relative to image width/height.
 
-path: ../datasets/cctv_crosswalk   # dataset root (relative to yolov5/ clone, or use absolute path)
+path: data/cctv_crosswalk   # dataset root (relative to yolov5/ clone, or use absolute path)
 train: images/train
 val:   images/val
 test:  images/test                  # optional — remove line if no test split exists

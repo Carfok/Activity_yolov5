@@ -1,9 +1,0 @@
-# Dataset configuration for Solar Panel Damage Detection
-train: /home/runner/work/Activity_yolov5/Activity_yolov5/data/images/train
-val: /home/runner/work/Activity_yolov5/Activity_yolov5/data/images/val
-
-# Number of classes
-nc: 3
-
-# Class names
-names: ['Hotspots_BurnedCells', 'Broken_Cracks', 'Soiling']
