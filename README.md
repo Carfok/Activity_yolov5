@@ -18,12 +18,13 @@ The training data combines:
 ## Repository structure
 
 ```
-Activity_yolov5/
 ├── data/
 │   └── cctv_crosswalk/              # Your 880 COCO person images
 │       ├── images/{train,val}
 │       └── labels/{train,val}
 ├── data/cctv_crosswalk.yaml         # YOLOv5 dataset config
+├── scripts/
+│   └── convert_coco_person_to_yolo.py  # Script para convertir datos COCO extras
 ├── Training_CCTV_Crosswalk.ipynb    # Colab notebook — train person + crosswalk
 └── yolov5s.pt                       # Pretrained weights
 ```
