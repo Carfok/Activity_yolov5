@@ -22,8 +22,9 @@ anchor_t: 4.0       # anchor-multiple threshold
 # Anchors
 anchors: 3          # anchors per output layer (0 to ignore)
 
-# Focal loss
-fl_gamma: 0.0       # focal loss gamma (efficientDet default gamma=1.5)
+# Focal loss — gamma > 0 down-weights easy/well-classified examples so the
+# model focuses on hard ones; reduces false positives and improves precision
+fl_gamma: 1.5       # focal loss gamma (1.5 reduces false positives on small datasets)
 
 # Augmentation (high augmentation for small dataset to prevent overfitting)
 hsv_h: 0.015        # image HSV-Hue augmentation (fraction)
@@ -40,5 +41,5 @@ mosaic: 1.0         # image mosaic (probability) — key for small dataset varie
 mixup: 0.1          # image mixup (probability) — mild mixup to generalize
 copy_paste: 0.1     # segment copy-paste (probability)
 
-# Label smoothing — prevents overfitting on small dataset
-label_smoothing: 0.1  # label smoothing epsilon
+# Label smoothing — reduced to sharpen decision boundaries and improve precision
+label_smoothing: 0.05  # label smoothing epsilon (lower value → harder labels → higher precision)
